@@ -1,22 +1,20 @@
 body {
-      color: purple;
-      background-color: lightblue;
-    }
-    .idea-box {
-      background-color: #FFF0A5;
-      padding: 20px;
-    }
+  color: black;
+}
+.idea-box {
+  background-color: #FFF0A5;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: #FFB03B;
+}
 
-    h1 {
-      text-align: center;
-      color: #FFB03B;
-    }
-
-    h2 {
-      color: #468966;
-      margin: 10px;
-      padding: 10px;
-      border: 2px solid #FFB03B;
-      border-radius: 5px;
-      text-align: center;
-    }
+h2 {
+  color: #468966;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #FFB03B;
+  border-radius: 5px;
+  text-align: center;
+}

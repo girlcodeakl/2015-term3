@@ -16,6 +16,11 @@ h1 {
   font-size: 90px;
   border: 5px solid #CD2C24;
 }
+a {
+  color: pink;
+  font-weight: bolder;
+  font-size: 30px;
+}
 
 h2 {
   color: #F2836B;

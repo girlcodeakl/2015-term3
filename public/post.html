@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-      <form method="post" action="/ideas">
-          <input type="text" name="idea" value="idea goes here">
-          <input type="submit" value="Submit">
-      </form>
-      <div class="navbar">
-      <a href="index.html"><b>Home<b></a>
+<head>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <form method="post" action="/ideas" class="submitButton">
+    <input type="text" name="idea" value="idea goes here" class="ideaInput">
+    <input type="submit" value="Submit" >
+  </form>
+  <div class="note">
+  </div>
+
+  <div class="navbar">
+    <a href="index.html"><b>Home<b></a>
       <a href="feed.html">Read the feed</a>
       <a href="post.html">Post something</a>
     </div>
+
+    <script>
+
+    var ideaSubmit = function (e) {
+      var userIdea = $(".ideaInput").val();
+      e.preventDefault();
+      $.post( "/ideas" , {idea: userIdea} );
+      $(".note").text("Thanks! Your idea was submitted");
+    }
+    $(".submitButton").on("submit", ideaSubmit);
+
+    </script>
   </body>
-</html>
+  </html>

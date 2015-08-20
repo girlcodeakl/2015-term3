@@ -3,7 +3,10 @@ body {
 }
 .idea-box {
   background-color: #E52B50;
-  padding: 20px;
+  padding: 50px;
+  font-style: italic;
+  font-family: inherit;
+  font-weight: lighter;
 }
 h1 {
   text-align: center;

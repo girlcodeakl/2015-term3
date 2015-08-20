@@ -12,10 +12,11 @@
       </form>
 
       <script>
+
+      $("submitButton").on("submit", myCoolFunction);
       var myCoolFunction = function () {
         preventDefault();
       }
-      $("submitButton").on("submit", myCoolFunction);
       </script>
   </body>
 </html>

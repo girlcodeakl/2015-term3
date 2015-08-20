@@ -3,11 +3,30 @@
   <head>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
-      <form method="post" action="/ideas">
-          <input type="text" name="idea" value="idea goes here">
-          <input type="submit" value="Submit">
+      <form method="post" action="/ideas" class="submitButton">
+          <input type="text" name="idea" value="idea goes here" class="ideaInput">
+          <input type="submit" value="Submit" >
       </form>
+      <div class="note">
+      </div>
+
+      <script>
+
+      var ideaSubmit = function (e) {
+        var userIdea = $(".ideaInput").val();
+        e.preventDefault();
+        $.post( "/ideas" , {idea: userIdea} );
+        $(".note").text("Thanks! Your idea was submitted");
+      }
+      $(".submitButton").on("submit", ideaSubmit);
+
+
+
+
+
+      </script>
   </body>
 </html>

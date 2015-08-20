@@ -3,11 +3,19 @@
   <head>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
       <form method="post" action="/ideas">
           <input type="text" name="idea" value="idea goes here">
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit" class="submitButton">
       </form>
+
+      <script>
+      var myCoolFunction = function () {
+        preventDefault();
+      }
+      $("submitButton").on("submit", myCoolFunction);
+      </script>
   </body>
 </html>

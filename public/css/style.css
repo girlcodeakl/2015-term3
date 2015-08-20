@@ -14,6 +14,11 @@ h1 {
   font-family: fantasy;
   font-size: 90px;
 }
+a {
+  color: pink;
+  font-weight: bolder;
+  font-size: 30px;
+}
 
 h2 {
   color: #8DB600;

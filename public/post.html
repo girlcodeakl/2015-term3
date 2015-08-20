@@ -7,19 +7,21 @@
   </head>
   <body>
       <form method="post" action="/ideas" class="submitButton">
-          <input type="text" name="idea" value="idea goes here" class="foo">
+          <input type="text" name="idea" value="idea goes here" class="ideaInput">
           <input type="submit" value="Submit" >
       </form>
+      <div class="note">
+      </div>
 
       <script>
 
-      var myCoolFunction = function (e) {
-        var userIdea = $(".foo").val();
+      var ideaSubmit = function (e) {
+        var userIdea = $(".ideaInput").val();
         e.preventDefault();
         $.post( "/ideas" , {idea: userIdea} );
-
+        $(".note").text("Thanks! Your idea was submitted");
       }
-      $(".submitButton").on("submit", myCoolFunction);
+      $(".submitButton").on("submit", ideaSubmit);
 
 
 

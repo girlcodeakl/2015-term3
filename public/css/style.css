@@ -18,7 +18,8 @@ a {
   color: purple;
   font-weight: normal;
   font-size: 20px;
-  border-spacing: 6px solid blue;
+  border: 6px solid blue;
+  padding: 10px;
 }
 
 h2 {

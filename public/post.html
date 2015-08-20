@@ -6,15 +6,15 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
-      <form method="post" action="/ideas">
+      <form method="post" action="/ideas" class="submitButton">
           <input type="text" name="idea" value="idea goes here">
-          <input type="submit" value="Submit" class="submitButton">
+          <input type="submit" value="Submit" >
       </form>
 
       <script>
 
-      var myCoolFunction = function () {
-        preventDefault();
+      var myCoolFunction = function (e) {
+        e.preventDefault();
       }
       $(".submitButton").on("submit", myCoolFunction);
 

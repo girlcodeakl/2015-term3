@@ -8,6 +8,8 @@ body {
 h1 {
   text-align: center;
   color: #8DB600;
+  font-family: fantasy;
+  font-size: 90px;
 }
 
 h2 {

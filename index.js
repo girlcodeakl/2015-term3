@@ -17,6 +17,8 @@ var idea = {};
 idea.text = "try wearing a hat on cold days";
 coolIdeas.push(idea);
 
+idea.time = new Date();
+
 //let a client GET the list of ideas
 app.get('/ideas', function (req, res) {
   res.send(coolIdeas);

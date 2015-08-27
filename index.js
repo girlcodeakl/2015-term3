@@ -13,7 +13,9 @@ app.use(bodyParser.json())
 
 //make an empty list of ideas
 var coolIdeas = [];
-coolIdeas.push("try wearing a hat on cold days");
+var idea = {};
+idea.text = "try wearing a hat on cold days";
+coolIdeas.push(idea);
 
 //let a client GET the list of ideas
 app.get('/ideas', function (req, res) {

@@ -1,8 +1,8 @@
 body {
-  background-color: #FFB03B;
+  background-color: #63A69F;
 }
 .idea-box {
-  background-color: #E52B50;
+  background-color: #63A69F;
   padding: 50px;
   font-style: italic;
   font-family: inherit;
@@ -10,14 +10,14 @@ body {
 }
 h1 {
   text-align: center;
-  color: #8DB600;
+  color: #F2836B;
   font-family: fantasy;
   font-size: 90px;
   border: 5px solid #CD2C24;
 }
 
 h2 {
-  color: #8DB600;
+  color: #F2836B;
   margin: 10px;
   padding: 10px;
   border: 2px solid #FFB03B;
@@ -31,6 +31,6 @@ h2 {
   margin: 30px;
   padding: 20px;
   text-align: center;
-  border: 3px solid #FFB03B;
+  border: 3px solid #CD2C24;
   border-radius: 50px;
 }

@@ -20,6 +20,7 @@ coolIdeas.push("try wearing a hat on cold days");
 
 //let a client GET the list of ideas
 app.get('/ideas', function (req, res) {
+  console.log("this user looked at the posts: " + req.cookies.name);
   res.send(coolIdeas);
 });
 
@@ -31,8 +32,9 @@ app.post('/ideas', function (req, res) {
 });
 
 app.post('/Login', function (req, res) {
-  var userName = "alice";
-res.cookie('name', userName, { maxAge: 900000, httpOnly: true });
+  console.log(req.body);
+  var userName = req.body.username;
+  res.cookie('name', userName, { maxAge: 900000, httpOnly: true });
   console.log(userName); //write it on the command prompt so we can see
 });
 

@@ -9,15 +9,14 @@
 <body>
   <h1 class="title">Idea Feed</h1>
   <div class="idea-box">
-  <img src= "http://mgatland.neocities.org/countryside.jpg">
 
     <script>
     //Hello! This is the start of the JavaScript.
 
     var addIdea = function(idea) {
-      var ideaElement = $('<h2>' + idea + " name" + '</h2>');
+      var ideaElement = $('<h2>' + '<img class="profile-picture" src= "http://mgatland.neocities.org/countryside.jpg">' + idea + " name" + '</h2>');
       $(".idea-box").append(ideaElement);
-  
+
 
     }
 

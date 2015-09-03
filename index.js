@@ -13,11 +13,15 @@ app.use(bodyParser.json())
 
 //make an empty list of ideas
 var coolIdeas = [];
-var idea = {};
-idea.text = "try wearing a hat on cold days";
-coolIdeas.push(idea);
 
-idea.time = new Date();
+var addIdea  = function (message) {
+  var idea = {};
+  idea.text = message;
+  idea.time = new Date();
+  coolIdeas.push(idea);
+}
+
+addIdea("try wearing a hat on cold days");
 
 //let a client GET the list of ideas
 app.get('/ideas', function (req, res) {
@@ -27,10 +31,7 @@ app.get('/ideas', function (req, res) {
 //let a client POST new ideas
 app.post('/ideas', function (req, res) {
   console.log(req.body.idea); //write it on the command prompt so we can see
-
-  var idea = {};
-  idea.text = req.body.idea
-  coolIdeas.push(idea); //save a new idea
+  addIdea(req.body.idea);
   res.send("thanks for your idea");
 });
 

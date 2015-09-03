@@ -27,7 +27,10 @@ app.get('/ideas', function (req, res) {
 //let a client POST new ideas
 app.post('/ideas', function (req, res) {
   console.log(req.body.idea); //write it on the command prompt so we can see
-  coolIdeas.push(req.body.idea); //save a new idea
+
+  var idea = {};
+  idea.text = req.body.idea
+  coolIdeas.push(idea); //save a new idea
   res.send("thanks for your idea");
 });
 

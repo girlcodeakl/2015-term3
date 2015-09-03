@@ -1,5 +1,5 @@
 body {
-  background-color: #FFB03B;
+  background-color: #F2E1AC;
 }
 .idea-box {
   background-color: #E52B50;
@@ -10,10 +10,10 @@ body {
 }
 h1 {
   text-align: center;
-  color: #8DB600;
+  color: #CD2C24;
   font-family: fantasy;
   font-size: 90px;
-  border: 5px solid #CD2C24;
+  border: 5px solid #F2836B;
 }
 
 h2 {

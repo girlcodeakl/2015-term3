@@ -22,9 +22,9 @@
     <script>
 
     var ideaSubmit = function (e) {
-      var idea = {};
-      idea.userIdea = $(".ideaInput").val();
-      $.post( "/ideas" , idea );
+      var data = {};
+      data.idea = $(".ideaInput").val();
+      $.post( "/ideas" , data );
       $(".note").text("Thanks! Your idea was submitted");
       e.preventDefault();
     }

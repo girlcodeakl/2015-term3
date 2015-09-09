@@ -22,10 +22,11 @@
     <script>
 
     var ideaSubmit = function (e) {
-      var userIdea = $(".ideaInput").val();
-      e.preventDefault();
-      $.post( "/ideas" , {idea: userIdea} );
+      var idea = {};
+      idea.userIdea = $(".ideaInput").val();
+      $.post( "/ideas" , idea );
       $(".note").text("Thanks! Your idea was submitted");
+      e.preventDefault();
     }
     $(".submitButton").on("submit", ideaSubmit);
 

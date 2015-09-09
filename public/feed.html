@@ -13,7 +13,11 @@
     <script>
     //Hello! This is the start of the JavaScript.
     var addidea = function(idea) {
-      var ideaElement = $('<h2>' + '<img class="profile-picture" src= "http://mgatland.neocities.org/countryside.jpg">' + idea.text +"      " + idea.time + " name" + '</h2>');
+      var htmlString = '<h2>';
+      htmlString += '<img class="profile-picture" src= "http://mgatland.neocities.org/countryside.jpg">';
+      htmlString += idea.text +"      " + idea.time + " name";
+      htmlString += '</h2>';
+      var ideaElement = $(htmlString);
       $(".idea-box").append(ideaElement);
 
 

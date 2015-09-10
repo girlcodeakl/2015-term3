@@ -23,6 +23,9 @@ var addIdea  = function (message,author) {
   idea.author = author;
   idea.time = new Date();
   coolIdeas.push(idea);
+  if (author === undefined){
+    idea.author = "anonymous"
+  }
 }
 
 addIdea("try wearing a hat on cold days","matthew");

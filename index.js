@@ -43,6 +43,7 @@ app.post('/Login', function (req, res) {
   console.log(req.body);
   var userName = req.body.username;
   res.cookie('name', userName, { maxAge: 900000, httpOnly: true });
+  res.send("setting your name");
   console.log(userName);
   console.log("this user looked at the posts: " + req.cookies.name); //write it on the command prompt so we can see
 });

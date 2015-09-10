@@ -1,11 +1,12 @@
 <html>
   <head>
     <meta charset='utf-8'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <h1> Please sign up here</h1>
-      <form method="Sign Up" action="Sign Up">
+      <form method="Sign Up" action="Sign Up" class="submitButton" >
           <input type="text" name="name" value="enter first name here">
           <input type="submit" value="Submit">
           <input type="text" name="last name" value="enter last name here">
@@ -17,5 +18,16 @@
           <input type="text" name="password" value="enter password here">
           <input type="submit" value="Submit">
       </form>
+      <script>
+
+      var userSubmit = function (e) {
+        var userName = $(".nameInput").val();
+        e.preventDefault();
+        $.post( "/user" , {user: userName} );
+        $(".note").text("Thanks! your now a user");
+      }
+      $(".submitButton").on("Submit", userSubmit);
+
+      </script>
   </body>
 </html>

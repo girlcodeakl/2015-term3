@@ -24,11 +24,19 @@ app.get('/ideas', function (req, res) {
   res.send(coolIdeas);
 });
 
+var user = [];
+
 //let a client POST new ideas
 app.post('/ideas', function (req, res) {
   console.log(req.body.idea); //write it on the command prompt so we can see
   coolIdeas.push(req.body.idea); //save a new idea
   res.send("thanks for your idea");
+});
+
+app.post('/user', function (req, res) {
+  console.log(req.body.user); //write it on the command prompt so we can see
+  user.push(req.body.user); //save a new idea
+  res.send("you are now a user");
 });
 
 //listen for connections on port 3000

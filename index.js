@@ -43,7 +43,8 @@ app.post('/Login', function (req, res) {
   console.log(req.body);
   var bob = req.body.username;
   res.cookie('bob', userName, { maxAge: 900000, httpOnly: true });
-  console.log(userName); //write it on the command prompt so we can see
+  console.log(userName);
+  console.log("this user looked at the posts: " + req.cookies.name); //write it on the command prompt so we can see
 });
 
 //listen for connections on port 3000

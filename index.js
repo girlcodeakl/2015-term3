@@ -41,7 +41,7 @@ app.post('/ideas', function (req, res) {
 
 app.post('/Login', function (req, res) {
   console.log(req.body);
-  var userName = req.body.username;
+  var "bob" = req.body.username;
   res.cookie('name', userName, { maxAge: 900000, httpOnly: true });
   console.log(userName); //write it on the command prompt so we can see
 });

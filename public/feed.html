@@ -15,7 +15,7 @@
     var addidea = function(idea) {
       var htmlString = '<h2>';
       htmlString += '<img class="profile-picture" src= "http://mgatland.neocities.org/countryside.jpg">';
-      htmlString += idea.text +"      " + idea.time + " name";
+      htmlString += idea.text +"      " + idea.time + idea.author;
       htmlString += '</h2>';
       var ideaElement = $(htmlString);
       $(".idea-box").append(ideaElement);

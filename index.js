@@ -17,18 +17,20 @@ app.use(cookieParser())
 //make an empty list of ideas
 var coolIdeas = [];
 
-var addIdea  = function (message,author) {
+var addIdea  = function (message, image, author) {
   var idea = {};
   idea.text = message;
   idea.author = author;
   idea.time = new Date();
+  idea.imageurl = image;
   coolIdeas.push(idea);
   if (author === undefined){
     idea.author = "anonymous"
   }
 }
 
-addIdea("try wearing a hat on cold days","matthew");
+
+addIdea("try wearing a hat on cold days", "hgfjf.jpg","matthew");
 
 //let a client GET the list of ideas
 app.get('/ideas', function (req, res) {
@@ -39,7 +41,9 @@ app.get('/ideas', function (req, res) {
 //let a client POST new ideas
 app.post('/ideas', function (req, res) {
   console.log(req.body.idea); //write it on the command prompt so we can see
-  addIdea(req.body.idea,req.cookies.name);
+
+  addIdea(req.body.idea, req.body.image, req.cookies.name);
+  
   res.send("thanks for your idea");
 });
 

@@ -17,15 +17,20 @@ app.use(cookieParser())
 //make an empty list of ideas
 var coolIdeas = [];
 
-var addIdea  = function (message, image) {
+var addIdea  = function (message, image, author) {
   var idea = {};
   idea.text = message;
+  idea.author = author;
   idea.time = new Date();
   idea.imageurl = image;
   coolIdeas.push(idea);
+  if (author === undefined){
+    idea.author = "anonymous"
+  }
 }
 
-addIdea("try wearing a hat on cold days", "hgfjf.jpg");
+
+addIdea("try wearing a hat on cold days", "hgfjf.jpg","matthew");
 
 //let a client GET the list of ideas
 app.get('/ideas', function (req, res) {
@@ -36,7 +41,9 @@ app.get('/ideas', function (req, res) {
 //let a client POST new ideas
 app.post('/ideas', function (req, res) {
   console.log(req.body.idea); //write it on the command prompt so we can see
-  addIdea(req.body.idea, req.body.image);
+
+  addIdea(req.body.idea, req.body.image, req.cookies.name);
+  
   res.send("thanks for your idea");
 });
 
@@ -44,9 +51,11 @@ app.post('/Login', function (req, res) {
   console.log(req.body);
   var userName = req.body.username;
   res.cookie('name', userName, { maxAge: 900000, httpOnly: true });
-  console.log(userName); //write it on the command prompt so we can see
+  res.send("setting your name");
+  console.log(userName);
+  console.log("this user looked at the posts: " + req.cookies.name); //write it on the command prompt so we can see
 });
 
 //listen for connections on port 3000
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 console.log("I am listening...");

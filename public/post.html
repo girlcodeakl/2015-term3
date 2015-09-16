@@ -24,11 +24,12 @@
     <script>
 
     var ideaSubmit = function (e) {
-      var userIdea = $(".ideaInput").val();
-      var userImage = $(".imageInput").val();
-      e.preventDefault();
-      $.post( "/ideas" , {idea: userIdea, image: userImage} );
+      var data = {};
+      data.idea = $(".ideaInput").val();
+      data.image = $(".imageInput").val();
+      $.post( "/ideas" , data );
       $(".note").text("Thanks! Your idea was submitted");
+      e.preventDefault();
     }
     $(".submitButton").on("submit", ideaSubmit);
 

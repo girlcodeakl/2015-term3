@@ -6,8 +6,10 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
+
   <form method="post" action="/ideas" class="submitButton">
     <input type="text" name="idea" value="idea goes here" class="ideaInput">
+    <input type="text" name="image" value="image url goes here" class="imageInput">
     <input type="submit" value="Submit" >
   </form>
   <div class="note">
@@ -24,10 +26,12 @@
     <script>
 
     var ideaSubmit = function (e) {
-      var userIdea = $(".ideaInput").val();
-      e.preventDefault();
-      $.post( "/ideas" , {idea: userIdea} );
+      var data = {};
+      data.idea = $(".ideaInput").val();
+      data.image = $(".imageInput").val();
+      $.post( "/ideas" , data );
       $(".note").text("Thanks! Your idea was submitted");
+      e.preventDefault();
     }
     $(".submitButton").on("submit", ideaSubmit);
 

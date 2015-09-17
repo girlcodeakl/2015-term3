@@ -15,7 +15,7 @@
     var addidea = function(idea) {
       var htmlString = '<h2>';
       htmlString += '<img class="profile-picture" src= "http://mgatland.neocities.org/countryside.jpg">';
-      htmlString += idea.text +"      " + idea.time + idea.author;
+      htmlString += idea.text +"      " + $.format.prettyDate(idea.time) + idea.author;
       htmlString += '</h2>';
       var ideaElement = $(htmlString);
       $(".idea-box").append(ideaElement);
@@ -42,7 +42,7 @@
         <a href="https://github.com/girlcodeakl/girlcodeapp/issues">link to issues</a>
         <a href="https://girlcodeakl.slack.com/messages/questions/">link to slack</a>
         <a href="http://girlcode.co.nz/course/#/">link to girlcode courses</a>
-    
+
     </div>
     </body>
     </html>

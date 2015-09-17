@@ -3,6 +3,8 @@
 <head>
   <meta charset='utf-8'>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
+
   <title>idea Feed</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,10 +16,8 @@
     //Hello! This is the start of the JavaScript.
     var addidea = function(idea) {
       var htmlString = '<h2>';
-
       htmlString += '<img class="profile-picture" src= '   + idea.imageurl + '  >';
-
-      htmlString += "    " + idea.text +"      " + idea.time + idea.author;
+      htmlString += "    " + idea.text +"      " + $.format.prettyDate(idea.time) + idea.author;
       htmlString += '</h2>';
       var ideaElement = $(htmlString);
       $(".idea-box").append(ideaElement);

@@ -3,34 +3,73 @@
   <meta charset='utf-8'>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+    .box {
+      color: black;
+      background-color: #FBE8B5;
+      text-align: center;
+      border: solid;
+      border-width: thin;
+      border-radius: 25px;
+      padding: 20px;
+      width: 200px;
+      height: 200px;
+      box-shadow: -1px 4px 58px 0px #5E1411;
+      border-color: #5E1411;
+      padding-top: 25px;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-bottom: 25px;
+      font-family: sans-serif;
+      margin: auto;
+    }
+
+    body {
+      background-color: #F2E1AC;
+    }
+
+    h3 {
+      color: #F2594B;
+      text-align: center;
+    }
+
+  </style>
 </head>
+
 <body>
-  <h1> Please login here</h1>
+ <div class="box">
+  <h3> Log in to Cattoo </h3>
   <form method="Login" action="Login">
     <input type="text" name="name" value="enter name here" class="ideaInput">
+    <br>
+    <br>
     <input type="text" name="password" value="enter password here">
+    <br>
+    <br>
     <input type="submit" value="Submit">
   </form>
+</div>
 
-  <div class="note">
-  </div>
+<div class="note">
+</div>
 
-  <div class="navbar">
-    <a href="index.html"><b>Home<b></a>
-    <a href="feed.html">Read the feed</a>
-    <a href="post.html">Post something</a>
-    <a href="Login.html">Login here</a>
-    <a href="sign-up.html">Sign up here</a>
-  </div>
+<div class="navbar">
+  <a href="index.html"><b>Home<b></a>
+  <a href="feed.html">Read the feed</a>
+  <a href="post.html">Post something</a>
+  <a href="Login.html">Login here</a>
+  <a href="sign-up.html">Sign up here</a>
+</div>
 
-  <script>
-    var Login = function (e) {
-      var username = $(".ideaInput").val();
-      e.preventDefault();
-      $.post( "/login" , {username: username} );
-      $(".note").text("Thanks! You're now logged in.");
-    }
-    $("form").on("submit", Login);
-  </script>
+<script>
+  var Login = function (e) {
+    var username = $(".ideaInput").val();
+    e.preventDefault();
+    $.post( "/login" , {username: username} );
+    $(".note").text("Thanks! You're now logged in.");
+  }
+  $("form").on("submit", Login);
+</script>
 </body>
+
 </html>

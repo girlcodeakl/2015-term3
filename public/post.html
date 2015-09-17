@@ -12,12 +12,14 @@
   <meta charset='utf-8'>
   <link rel="stylesheet" href="css/style.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
 </head>
+
 <body>
 
   <form method="post" action="/ideas" class="submitButton">
-    <input type="text" name="idea" value="idea goes here" class="ideaInput">
-    <input type="text" name="image" value="image url goes here" class="imageInput">
+    <input type="text" name="idea" placeholder="idea goes here" class="ideaInput">
+    <input type="text" name="image" placeholder="image url goes here" class="imageInput">
     <input type="submit" value="Submit" >
   </form>
   <div class="note">
@@ -29,6 +31,10 @@
       <a href="post.html">Post something</a>
       <a href="Login.html">Login here</a>
       <a href="sign-up.html">Sign up here</a>
+      <a href="https://github.com/girlcodeakl/girlcodeapp/issues">link to issues</a>
+      <a href="https://girlcodeakl.slack.com/messages/questions/">link to slack</a>
+      <a href="http://girlcode.co.nz/course/#/">link to girlcode courses</a>
+
     </div>
 
     <script>
@@ -37,6 +43,7 @@
       var data = {};
       data.idea = $(".ideaInput").val();
       data.image = $(".imageInput").val();
+
       $.post( "/ideas" , data );
       $(".note").text("Thanks! Your idea was submitted");
       e.preventDefault();

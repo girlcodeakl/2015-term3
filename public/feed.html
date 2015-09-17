@@ -17,7 +17,7 @@
       var htmlString = '<h2>';
 
       htmlString += '<img class="profile-picture" src= '   + idea.imageurl + '  >';
-
+      htmlString += idea.author + " - " + idea.text +" - " + $.format.prettyDate(idea.time);
       htmlString += '</h2>';
       var ideaElement = $(htmlString);
       $(".idea-box").append(ideaElement);

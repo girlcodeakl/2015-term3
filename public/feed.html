@@ -18,7 +18,7 @@
       var htmlString = '<h2>';
       htmlString += '<img class="profile-picture" src= "http://mgatland.neocities.org/countryside.jpg">';
 
-      htmlString += idea.text +"      " + $.format.prettyDate(idea.time) + idea.author;
+      htmlString += idea.text +"      " + $.format.prettyDate(idea.time) + " " + idea.author;
       htmlString += '</h2>';
       var ideaElement = $(htmlString);
       $(".idea-box").append(ideaElement);
